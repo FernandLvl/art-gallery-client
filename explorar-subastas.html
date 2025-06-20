@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Explorar Subastas</title>
+    <link rel="stylesheet" href="css/pagina-principal.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="banner-text">Explorar Subastas Activas</div>
+        <button id="volver-btn" title="Volver">
+            Volver a inicio
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </header>
+
+    <main>
+        <div id="galeria-subastas" class="galeria-grid"></div>
+        <div id="error-explorar"></div>
+    </main>
+
+    <!-- modal de detalle de subasta -->
+    <div id="modal-subasta" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-modal" id="cerrar-subasta">&times;</span>
+            <div id="detalle-subasta"></div>
+            <form id="form-oferta">
+                <label>Tu oferta:</label>
+                <input type="number" id="oferta-cantidad" step="0.01" required>
+                <button type="submit">Ofertar</button>
+            </form>
+            <div id="oferta-error"></div>
+        </div>
+    </div>
+
+    <script src="js/explorar-subastas.js"></script>
+</body>
+</html>

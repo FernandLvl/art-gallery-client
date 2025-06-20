@@ -1,0 +1,259 @@
+/* general */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* header/banner */
+header {
+    background: linear-gradient(to right, #7f00ff, #e100ff);
+    color: white;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+}
+
+.banner-text {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* botones header */
+#logout-btn,
+#perfil-btn,
+#explorar-btn,
+#volver-btn,
+#btn-iniciar-subasta,
+#ofertas-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+    margin-left: 10px;
+}
+
+#logout-btn:hover,
+#perfil-btn:hover,
+#explorar-btn:hover,
+#volver-btn:hover,
+#btn-iniciar-subasta:hover,
+#ofertas-btn:hover {
+    transform: scale(1.15);
+    color: #ffd700;
+}
+
+/* galería tipo Pinterest */
+main {
+    padding: 20px;
+}
+
+.galeria-grid {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+@media (max-width: 1000px) {
+    .galeria-grid {
+        column-count: 2;
+    }
+}
+@media (max-width: 600px) {
+    .galeria-grid {
+        column-count: 1;
+    }
+}
+
+.obra {
+    background: #1f1f1f;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    break-inside: avoid;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.obra:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.obra img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #444;
+}
+
+.obra-content {
+    padding: 15px;
+}
+
+.obra-content h3 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.obra-content p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.obra .subasta {
+    color: #00e5ff;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+/* error */
+#error, #modal-error, #subasta-error {
+    color: #ff5c8d;
+    margin-top: 10px;
+    font-size: 0.95em;
+}
+
+/* botón flotante */
+#btn-nueva-obra {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(45deg, #00e676, #1de9b6);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.6em;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 99;
+}
+
+#btn-nueva-obra:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.6);
+}
+
+/* modal general */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #2a2a2a;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* cerrar modal */
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #999;
+}
+
+.cerrar-modal:hover {
+    color: #fff;
+}
+
+/* formularios */
+#form-obra input[type="text"],
+#form-obra textarea,
+#form-obra input[type="file"],
+#form-subasta input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1em;
+    background-color: #333;
+    color: white;
+}
+
+#form-obra button,
+#form-subasta button {
+    background: linear-gradient(45deg, #ff4081, #f50057);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s, transform 0.2s;
+}
+
+#form-obra button:hover,
+#form-subasta button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #f50057, #d500f9);
+}
+
+/* modal imagen ampliada */
+#modal-imagen {
+    position: fixed;
+    z-index: 300;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+#cerrar-imagen {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 301;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+ 

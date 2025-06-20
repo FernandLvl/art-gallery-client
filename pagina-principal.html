@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galería de Arte</title>
+    <link rel="stylesheet" href="css/pagina-principal.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <header>
+        <div class="banner-text" id="welcome">Bienvenid@</div>
+        <div class="buttons" >
+            <button id="perfil-btn" title="Mi perfil" style="display:none;">
+                Mi perfil
+                <i class="fas fa-user-circle"></i>
+            </button>
+            <button id="explorar-btn" title="Explorar" style="display:none;">
+                Explorar subastas
+                <i class="fas fa-search"></i>
+            </button>
+            <button id="ofertas-btn" title="Mis ofertas" style="display:none;">
+                Mis ofertas
+                <i class="fas fa-gavel"></i>
+            </button>
+            <button id="logout-btn" title="Cerrar sesión">
+                Cerrar sesión
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+            
+
+        </div>
+    </header>
+
+    <main>
+        <div id="galeria" class="galeria-grid"></div>
+        <div id="error"></div>
+    </main>
+
+
+    <button id="btn-nueva-obra" title="Nueva publicación" style="display:none;">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Modal para nueva obra -->
+    <div id="modal-nueva-obra" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Publicar nueva obra</h2>
+            <form id="form-obra">
+                <input type="text" id="titulo" name="titulo" placeholder="Título de la obra" required>
+                <textarea id="descripcion" name="descripcion" placeholder="Descripción"></textarea>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                <button type="submit">Publicar</button>
+            </form>
+            <div id="modal-error"></div>
+        </div>
+    </div>
+
+    <!-- Modal de imagen ampliada -->
+    <div id="modal-imagen" class="modal" style="display: none;">
+        <span class="cerrar-modal" id="cerrar-imagen">&times;</span>
+        <img class="modal-img" id="imagen-ampliada" src="" alt="Imagen ampliada" />
+    </div>
+
+    <script src="js/pagina-principal.js"></script>
+</body>
+</html>

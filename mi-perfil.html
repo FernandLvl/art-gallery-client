@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi perfil</title>
+    <link rel="stylesheet" href="css/pagina-principal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<!-- Modal para iniciar subasta -->
+<div id="modal-subasta" class="modal">
+    <div class="modal-content">
+        <span class="cerrar-modal" id="cerrar-subasta">&times;</span>
+        <h2>Iniciar Subasta</h2>
+        <form id="form-subasta">
+            <input type="hidden" id="obra-id" name="obra_id">
+            <label>Precio inicial:</label>
+            <input type="number" id="precio-inicio" step="0.01" required>
+            <br>
+            <label>Fecha de inicio:</label>
+            <input type="datetime-local" id="fecha-inicio" required>
+            <br>
+            <label>Fecha de fin:</label>
+            <input type="datetime-local" id="fecha-fin" required>
+            <br>
+            <button type="submit" id="btn-iniciar-subasta">Iniciar subasta</button>
+        </form>
+        <div id="subasta-error"></div>
+    </div>
+</div>
+<body>
+    <header>
+        <div class="banner-text" id="perfil-titulo">Mis obras</div>
+        <button id="volver-btn" title="Volver a inicio">
+            Volver a inicio
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </header>
+
+    <main>
+        <div id="galeria-mis-obras" class="galeria-grid"></div>
+        <div id="error-perfil"></div>
+    </main>
+
+    <script src="js/mi-perfil.js"></script>
+</body>
+</html>
